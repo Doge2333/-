@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="注册界面.css">
+    <!-- <script src="注册界面.js"></script> -->
+</head>
+
+<body>
+    <h2 class="center">注册账号</h2>
+    <div class="center">
+        <span><button>返回主页</button></span>
+        <span><button></button></span>
+        <span><button></button></span>
+        <span><button></button></span>
+        <span><button></button></span>
+    </div>
+    <h4 class="center">求职者，欢迎来到八面玲珑！</h4>
+    <h4 class="center">面试之前，请先把简历填好吧！</h4>
+
+    <div class="regesiterArea">
+        <h3>注册新用户
+            <div class="blue">
+                <a href="">已有账号？点我登录</a>
+            </div>
+        </h3>
+
+        <div class="reg_form">
+
+            <ul>
+                <li>
+                    <label for=""><span>*</span>QQ号/微信号:</label>
+                    <input type="text">
+                </li><br/>
+
+                <li id="password">
+                    <label for=""><span>*</span>密码:</label>
+                    <input value="请输入8-16位数字与字母的组合" type="text" maxlength="16" minlength="8" name="password" class="text-color">
+                    <!-- <p class="empty"></p> -->
+                </li><br/>
+
+                <li>
+                    <label for=""><span>*</span>确认密码:</label>
+                    <input type="password" maxlength="16" minlength="8" name="password">
+                </li><br/>
+
+                <li id="name">
+                    <label for=""><span>*</span>昵称:</label>
+                    <input value="请输入8个字以内的汉字和字符的组合" type="text" class="text-color">
+                </li><br/>
+
+                <li>
+                    <label for=""><span>*</span>请输入手机号:</label>
+                    <input type="text">
+                    <input type="button" value="获取验证码" id="auth code" class="empty">
+                </li><br/>
+
+                <li>
+                    <label for=""><span>*</span>请输入验证码:</label>
+                    <input type="text">
+                </li><br/>
+
+                <li>
+                    <label for=""><span>*</span>电子邮箱:</label>
+                    <input type="text">
+                </li><br/>
+
+
+
+                <h4><span>**</span>为了帮助您更好找到适合您的企业和岗位,请您尽可能填写以下信息</h4>
+                <li>
+                    <label for="">学历</label>
+                    <select name="education background" id="">
+                        <option value="">小学及以下</option>
+                        <option value="">初中</option>
+                        <option value="">中专</option>
+                        <option value="">高中</option>
+                        <option value="">大专</option>
+                        <option value="">本科</option>
+                        <option value="">硕士</option>
+                        <option value="">博士</option>
+                    </select>
+                </li><br/>
+
+                <li>
+                    <label for="">您有意向的公司:</label><input type="text">
+                </li><br/>
+
+                <li>
+                    <label for="">您有意向的岗位或者相关方向:</label><input type="text">
+                </li><br/>
+
+                <input type="submit" name="完成注册" value="完成注册" class="center"> &nbsp;
+                <input type="reset" name="重置" value="重新填写">
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //发送验证码到手机上
+        var authCode = document.getElementById('auth code');
+        authCode.onclick = function() {
+            alert('验证码已经发送到您的手机，请注意查收！');
+        }
+
+        //密码和昵称输入框的提示信息
+        var texts = document.querySelectorAll('input');
+        var password = texts[1];
+        var Name = texts[3];
+
+        password.onfocus = function() {
+            if (this.value === '请输入8-16位数字与字母的组合') {
+                this.value = '';
+            }
+
+            password.type = "password";
+        }
+
+        password.onblur = function() {
+            if (this.value === '' && password.type === "password") {
+                password.type = "text";
+            }
+
+            if (this.value === '') {
+                this.value = '请输入8-16位数字与字母的组合';
+            }
+
+        }
+
+        Name.onfocus = function() {
+            if (this.value === '请输入8个字以内的汉字和字符的组合') {
+                this.value = '';
+            }
+
+        }
+
+        Name.onblur = function() {
+            if (this.value === '') {
+                this.value = '请输入8个字以内的汉字和字符的组合';
+            }
+        }
+
+        //限制密码和昵称长度
+        // var inputs = document.querySelectorAll('input');
+        // var ps = document.querySelectorAll('p');
+        // var passwordInput = inputs[1];
+        // var passwordP = ps[1];
+        // passwordInput.onblur = function() {
+        //     if (passwordInput.value.length < 8 || passwordInput.value.length > 16) {
+        //         passwordP.className = 'wrong';
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
