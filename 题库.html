@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="题库.css">
+</head>
+
+<body>
+    <div class="question_bank position">
+        <!-- 菜单栏 -->
+        <div class="menu margin">
+            <a href="">
+                <div class="back">返回</div>
+            </a>
+            <div><img src="book.webp" alt=""></div>
+            <div><img src="more.webp" alt=""></div>
+        </div>
+
+        <!-- 搜索栏 -->
+        <div class="search margin_choose">
+            <div class="searchQuestions">搜索题目</div>
+            <div><input type="text" value="请输入你想要搜索的题目"></div>
+            <div class="cancel">取消</div>
+        </div>
+
+        <!-- 筛选栏 -->
+        <div class="choose margin">
+            <div>
+                <select name="" id="">
+                    <option value="">专业领域</option>
+                    <option value="">文科</option>
+                    <option value="">理科</option>
+                    <option value="">工科</option>
+                    <option value="">管理类</option>
+                    <option value="">艺术类</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="" id="">
+                    <option value="">题目类型</option>
+                    <option value="">选择题</option>
+                    <option value="">填空题</option>
+                    <option value="">问答题</option>
+                    <option value="">实际操作题</option>
+                    <option value="">小组合作题</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="" id="">
+                    <option value="">排序方式</option>
+                    <option value="">综合排序</option>
+                    <option value="">按时间排序</option>
+                    <option value="">按热度排序</option>
+                    <option value="">按时长排序</option>                   
+                </select>
+            </div>
+        </div>
+
+        <!-- 题目列表 -->
+        <div class="list">
+            <div class="question">从Paxos到Zookeeper分布式一致性原理与实践<img src="arrow_right.webp"></div>
+            <div class="question">请描述C/C++程序的内存分区?<img src="arrow_right.webp"></div>
+            <div class="question">快速排序的思想、时间复杂度、实现以及优化方法?<img src="arrow_right.webp"></div>
+            <div class="question">请描述IO多路复用机制?<img src="arrow_right.webp"></div>
+            <div class="question">实践中如何优化MySQL?<img src="arrow_right.webp"></div>
+        </div>
+    </div>
+
+    <script>
+        // 关闭搜索栏
+        var cancel = document.querySelector('.cancel');
+        var Search = document.querySelector('.search');
+        cancel.onclick = function() {
+            Search.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
